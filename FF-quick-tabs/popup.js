@@ -236,7 +236,7 @@ function compareTabArrays(recordedTabsList, queryTabList) {
 
 $(document).ready(function() {
 
-  // pageTimer.log("Document ready");
+  
 
   switch(bg.searchType()) {
     case 'fuze':
@@ -256,6 +256,8 @@ $(document).ready(function() {
   }
 
   $('<style/>').text(bg.getCustomCss()).appendTo('head');
+  
+  $('#searchbox').focus()
 
   $(document).on('keydown.down', function() {
     focusNext();
@@ -360,7 +362,11 @@ $(document).ready(function() {
     }
   });
 
+  $('#searchbox').focus()
+
   drawCurrentTabs();
+
+  $('#searchbox').focus()
 
   // pageTimer.log("Document ready completed");
 
@@ -374,7 +380,7 @@ function drawCurrentTabs() {
   chrome.tabs.query({}, function(queryResultTabs) {
 
     // assign the cleaned tabs list back to background.js
-    bg.tabs = compareTabArrays(bg.tabs, queryResultTabs);
+    bg.tabs = bg.tabs //= compareTabArrays(bg.tabs, queryResultTabs);
 
     // find the current tab so that it can be excluded on the initial tab list rendering
     chrome.tabs.query({currentWindow:true, active:true}, function(tab) {

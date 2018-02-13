@@ -1,0 +1,46 @@
+{
+  "manifest_version": 2,
+  "name": "Quick Fire Tabs",
+  "description": "Adds tab search functionality",
+  "version": "FF.0.1",
+  "permissions": [
+    "tabs",
+    "bookmarks",
+    "history"
+  ],
+  "icons": {
+    "128": "assets/icon-128.png",
+    "32": "assets/icon-32.png",
+    "48": "assets/icon-48.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": {
+      "32": "assets/icon-32.png"
+    },
+    "default_title": "Quick Tabs",
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html"
+  },
+  "_TODO": "implement _browser_action for other OSes & modification of browser action in FF.",
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Space"
+        
+      }
+    },
+    "quick-prev-tab": {
+      "description": "Quick next tab (suggested Ctrl+J)"
+    },
+    "quick-next-tab": {
+      "description": "Quick previous tab (suggested Ctrl+K)"
+    }
+  }
+}

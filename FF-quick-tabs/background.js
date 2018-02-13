@@ -452,7 +452,7 @@ function switchTabs(tabid, callback) {
       callback();
     }
     chrome.windows.update(tab.windowId, {focused:true}, function () {
-      chrome.tabs.update(tab.id, {selected:true});
+      chrome.tabs.update(tab.id, {active:true});
       if (moveOnSwitch()) {
         chrome.tabs.move(tab.id, { index: -1 });
       }
