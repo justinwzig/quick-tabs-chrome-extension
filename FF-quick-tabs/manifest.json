@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Quick Fire Tabs",
-  "description": "Adds tab search functionality",
+  "name": "FF Quick Tabs",
+  "description": "Firefox port of Quick Tabs Chrome Extension",
   "version": "FF.0.1",
   "permissions": [
     "tabs",
@@ -28,7 +28,6 @@
   "options_ui": {
     "page": "options.html"
   },
-  "_TODO": "implement _browser_action for other OSes & modification of browser action in FF.",
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {
